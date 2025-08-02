@@ -1,8 +1,9 @@
-import React from 'react';
+import React , { useState } from 'react';
 import Slider from 'react-slick';
-import { Card, CardMedia, CardContent, Typography} from '@mui/material';
+import { Card, CardMedia, CardContent, Typography, Stack, CircularProgress, Box} from '@mui/material';
 
 const ImageCarousel = () => {
+    
     const settings = {
         dots: true,
         infinite: false,
@@ -39,25 +40,43 @@ const ImageCarousel = () => {
     };
 
     const artists = [
-        {id:1, src: '/Pintora.png', title: 'Pintura 1', description: 'Descripción del colaborador'},
-        {id:2, src:'/alfarero.png', title: 'Alfarero', description: 'Descripción de colaborador 2'},
-        {id:3, src: '/Chef.png' , title: 'Chef' , description: 'Descripción del colaborador 3 ' },
-        {id:4, src: '/estilista.jpg' , title: 'Estilista' , description: 'Descripción del colaborador 4 ' },
+        {id:1, src: '/Pintora.webp', title: 'Pintora', description: 'Descripción del colaborador'},
+        {id:2, src:'/alfarero.webp', title: 'Alfarero', description: 'Descripción de colaborador 2'},
+        {id:3, src: '/Chef.webp' , title: 'Chef' , description: 'Descripción del colaborador 3 ' },
+        {id:4, src: '/estilista.webp' , title: 'Estilista' , description: 'Descripción del colaborador 4 ' },
     ];
+    
+    const [imageLoaded , setImageLoaded] = useState( { } );
+
+
+   /*  Función de feedback para carga de imágenes */
+    const handleImageLoad = (id) => {
+        setImageLoaded(prev => ({...prev, [id]: true}));
+    };
 
 
     return (
         <div className='container mx-auto p-4'>
+            <div className=' mx-auto p-4'>
+            <h1 className='font-titles text-center font-bold text-xl'>Nuestros Colaboradores</h1>
+            </div>
             <Slider {...settings}>
                 {artists.map((artist) => (
                     <div key={artist.id} className='p-2'>
                         <Card className='max-w-sm mx-auto'>
+                            {! imageLoaded[artist.id] && (
+                                <Box display='flex' justifyContent='center' alignItems='center' height='140px'>
+                                    <CircularProgress color='secondary' />
+                                </Box>
+                            )}
                             <CardMedia
                                 component='img'
                                 height='140'
                                 image={artist.src}
                                 alt={artist.title} 
                                 className='object-cover'
+                                style={ { display: imageLoaded[artist.id] ? 'block' : 'none'}}
+                                onLoad={ () => handleImageLoad(artist.id)}
                             />
                             <CardContent >
                                 <Typography className='font-titles' gutterBottom variant='h5' component='div'>

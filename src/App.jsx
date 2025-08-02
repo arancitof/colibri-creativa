@@ -14,6 +14,9 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/Artistas' />
+        <Route path='/Sobre-nosotros' />
+        <Route path='/Contacto' />
 
       </Routes>
 

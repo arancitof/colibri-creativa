@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import SearchIcon from '@mui/icons-material/Search';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import CloseIcon from '@mui/icons-material/Close';
@@ -15,12 +16,13 @@ const Navbar = () => {
                 <img src='/logo-colibri-brand.png' alt="LogoColibri" className="h-16 mr-auto" />
             </div>
             {/* Menu */}
-            <ul className="hidden md:flex space-x-6 font-titles">
-                <li><a href="#" className="font-semibold">Inicio</a></li>
-                <li><a href="#" className="font-semibold">Artistas</a></li>
-                <li><a href="#" className="font-semibold">Sobre Nosotros</a></li>
-                <li><a href="#" className="font-semibold">Contacto</a></li>
-            </ul>
+            <div className="hidden md:flex space-x-6 font-titles">
+                <Link to='/' className='font-semibold'>Inicio</Link>
+                <Link to='/Artistas' className='font-semibold'>Artistas</Link>
+                <Link to='/Sobre-nosotros' className='font-semibold'>Sobre Nosotros</Link>
+                <Link to='/Contacto' className='font-semibold'>Contacto</Link>
+
+            </div>
             {/* Iconos */}
             <div className="hidden md:flex space-x-4">
                 <a href="#"><SearchIcon /></a>
@@ -37,10 +39,10 @@ const Navbar = () => {
             {/* Menu Desplegable */}
             {isOpen && (
                 <div className='font-titles absolute top-full left-0 w-full bg-title text center py-4 shadow-lg flex flex-col space-y-4 md:hidden z-50 '>
-                    <a href="" className='font-semibold'>Inicio</a>
-                    <a href="" className='font-semibold'>Artistas</a>
-                    <a href="" className='font-semibold'>Sobre Nosotros</a>
-                    <a href="" className='font-semibold'>Contacto</a>
+                    <Link className='font-semibold' to='/' onClick={ () => setIsOpen(false)}>Inicio</Link>
+                    <Link className='font-semibold' to='/Artistas' onClick={ () => setIsOpen(false)}>Artistas</Link>
+                    <Link className='font-semibold' to='/Sobre-nosotros' onClick={ () => setIsOpen(false)}>Sobre Nosotros</Link>
+                    <Link className='font-semibold' to='/Contacto' onClick={ () => setIsOpen(false)}>Contacto</Link>
                     <div className='flex justify-center space-x-4 mt-2'>
                         <a href=""><SearchIcon /></a>
                         <a href=""><ShoppingCartIcon /></a>

@@ -10,7 +10,7 @@ const Navbar = () => {
 
 
     return (
-        <nav className="bg-title flex items-center text-center justify-between p-4 shadow-md relative ">
+        <nav className="bg-title flex items-center text-center justify-between p-4 shadow-md fixed top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-full rounded-lg z-50">
             {/* Logo y Rutas de Navegación */}
             <div className="flex items-center">
                 <img src='/logo-colibri-brand.png' alt="LogoColibri" className="h-16 mr-auto" />
@@ -38,7 +38,7 @@ const Navbar = () => {
 
             {/* Menu Desplegable */}
             {isOpen && (
-                <div className='font-titles absolute top-full left-0 w-full bg-title text center py-4 shadow-lg flex flex-col space-y-4 md:hidden z-50 '>
+                <div className='font-titles absolute top-full left-0 w-full bg-title text center py-4 shadow-lg flex flex-col space-y-4 md:hidden z-50 rounded-lg absolute'>
                     <Link className='font-semibold' to='/' onClick={ () => setIsOpen(false)}>Inicio</Link>
                     <Link className='font-semibold' to='/Artistas' onClick={ () => setIsOpen(false)}>Artistas</Link>
                     <Link className='font-semibold' to='/Sobre-nosotros' onClick={ () => setIsOpen(false)}>Sobre Nosotros</Link>

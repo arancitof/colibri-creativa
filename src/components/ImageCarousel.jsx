@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import { Card, CardMedia, CardContent, Typography, Stack, CircularProgress, Box } from '@mui/material';
+import InfoBox from './InfoBox';
 
 const ImageCarousel = () => {
 
@@ -56,19 +57,17 @@ const ImageCarousel = () => {
 
 
     return (
-        <div className='container mx-auto p-4'>
+        <div className='container mx-auto p-30'>
             <div className=' mx-auto p-4'>
-                <h1 className='font-titles text-center font-bold text-xl'>Momentos Mágicos</h1>
-            </div>
-            <div className='mx-auto p-2'>
-                <Typography className='font-body text-justify' gutterBottom>
-                    "Pequeños instantes que se vuelven arte"
+                <InfoBox title='Momentos Mágicos'>
+                    "Pequeños instantes que se vuelven arte."
+
                     Cada foto cuenta una historia:
                     un cabello transformado,
                     un hilo convertido en alas,
                     un taller donde la risa y la calma se encuentran.
                     Explora nuestra galería y siente la magia de crear y cuidarte a la vez.
-                </Typography>
+                </InfoBox>
             </div>
 
             <Slider {...settings}>

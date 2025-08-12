@@ -41,7 +41,7 @@ const philosophyPoints = [
 
 const AboutUs = () => {
     return (
-        <Box className='p-25'>
+        <Box className='p-5'>
             {philosophyPoints.map(( point, index) => (
             <Box
             key={point.id}

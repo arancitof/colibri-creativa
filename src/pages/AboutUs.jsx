@@ -26,22 +26,34 @@ const philosophyPoints = [
         image: '/raices.webp',
     },
     {
-        id: 1, 
+        id: 2, 
         title: 'Alas',
         description: 'El arte de cuidarte y volar libre. Para nosotros, la belleza va mas allá del físico: es sentirte en armonía contigo misma y dejar que tu creatividad te de alas. Cada servicio, taller o pieza artesanal tiene el mismo propósito: conectarte con tu esencia, liberar el estrés y regalarte momento de magia. ',
         image: '/alas.webp',
     },
     {
-        id: 1, 
+        id: 3, 
         title: 'Lo que creamos',
-        description: 'Entre hilos, colores y momentos de autocuidado: Estilismo Consiente: peinados, cortes y color que reflejan esencia. Arte:hecho a mano: piezas de crochet y accesorios de nuestra energía creativa. Talleres creativos: espacios para relajarte, reconectar contigo y despertar tu artista interior. ',
-        image: '/colors.webp',
+        description: 'Estilismo Consiente: peinados, cortes y color que reflejan esencia. ',
+        image: '/estilismo.webp',
+    },
+    {
+        id: 4,
+        title: 'Arte hecho a mano.',
+        description: 'Piezas de crochet y accesorios únicos que llevan tu artista interior',
+        image: '/bordado.webp',
+    },
+    {
+        id: 5,
+        title: 'Talleres Creativos',
+        description: 'Espacios para relajarte, conectar contigo y despertar tu artista interior',
+        image: '/taller.webp',
     }
 ]
 
 const AboutUs = () => {
     return (
-        <Box className='pt-20'>
+        <Box className='pt-40 mx-10'>
             {philosophyPoints.map(( point, index) => (
             <Box
             key={point.id}
@@ -51,7 +63,7 @@ const AboutUs = () => {
                 src={point.image}
                 alt={point.title}
                 className='w-full lg:w-1/2 rounded-lg mb-4 lg:mb-0 lg:mx-8'
-                style={{ width: '500px' , height: '500', objectFit: 'cover' }}
+                style={{ width: '500px' , height: '500px', objectFit: 'full' }}
                 />
                 <AnimateCard className='w-full lg:w-1/2'>
                 <CardContent>

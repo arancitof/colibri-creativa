@@ -57,13 +57,13 @@ const AboutUs = () => {
             {philosophyPoints.map(( point, index) => (
             <Box
             key={point.id}
-            className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} justify-center my-8`}
+            className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} justify-center my-8 text-justify text-center`}
             >
                 <img
                 src={point.image}
                 alt={point.title}
                 className='w-full lg:w-1/2 rounded-lg mb-4 lg:mb-0 lg:mx-8'
-                style={{ width: '500px' , height: '500px', objectFit: 'full' }}
+                style={{ width: '500px' , height: '500px', object: 'cover' }}
                 />
                 <AnimateCard className='w-full lg:w-1/2'>
                 <CardContent>

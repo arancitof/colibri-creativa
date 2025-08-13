@@ -58,7 +58,7 @@ const ImageCarousel = () => {
 
     return (
         <div className='container mx-auto p-5'>
-            <div className=' mx-auto p-4'>
+            <div className=' mx-auto pt-30'>
                 <InfoBox title='Momentos Mágicos'>
                     "Pequeños instantes que se vuelven arte."
 

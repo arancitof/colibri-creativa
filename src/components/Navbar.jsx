@@ -9,10 +9,11 @@ const Navbar = () => {
     const [ isOpen, setIsOpen ] = useState(false);
 
 
+    
     return (
-        <nav className="bg-title flex items-center text-center justify-between p-4 shadow-md fixed top-4 left-1/2 transform -translate-x-1/2 w-11/12 max-w-full rounded-lg z-50">
+        <nav className="bg-title flex items-center text-center justify-between p-4 shadow-md fixed top-4 left-1/2 transform -translate-x-1/2  w-11/12 max-w-full rounded-lg z-50 ">
             {/* Logo y Rutas de Navegación */}
-            <div className="flex items-center">
+            <div className="flex items-center ">
                 <img src='/logo-colibri-brand.png' alt="LogoColibri" className="h-16 mr-auto" />
             </div>
             {/* Menu */}
